@@ -1,4 +1,18 @@
-<<<<<<< HEAD
+# Welcome to Embedding a Dossier using LWC
+
+### Requirements:
+As of (8/26/2020)
+
+ 1. Set up firefox as your default browser. We will be opening the salesforce developer through the terminal. There is some issues logging into the dossier after it's embedded with chrome so we will be using firefox.
+
+ 2. Must be using Microstrategy 2020 V2. At the time of creating this github this is the lastest release. I would recommend using the latest  MicroStrategy Version and embedding sdk
+ 
+ 3. Download SF CLI: https://developer.salesforce.com/tools/sfdxcli
+	 	 After installing run command `sfdx update` to confirm installation and upgrading to latest release
+      
+ 4. Download VS Code editor: https://code.visualstudio.com/
+	 Install Salesforce extension pack. You can use the editor of your choice but VS code has many tools to make development easier with Salesforce and lightning web components
+
 # Salesforce App
 
 This guide helps Salesforce developers who are new to Visual Studio Code go from zero to a deployed app using Salesforce Extensions for VS Code and Salesforce CLI.
@@ -57,7 +71,3 @@ For details about developing against orgs that don’t have source tracking, see
 Don’t deploy your code to production directly from Visual Studio Code. The deploy and retrieve commands do not support transactional operations, which means that a deployment can fail in a partial state. Also, the deploy and retrieve commands don’t run the tests needed for production deployments. The push and pull commands are disabled for orgs that don’t have source tracking, including production orgs.
 
 Deploy your changes to production using [packaging](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_dev2gp.htm) or by [converting your source](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference_force_source.htm#cli_reference_convert) into metadata format and using the [metadata deploy command](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference_force_mdapi.htm#cli_reference_deploy).
-=======
-# embedded-dossier
-Here is basic code for embedding salesforce and microstrategy dossier using lightning web component framework
->>>>>>> 6fc1d69dc8e5d18dbcaff8e35c6209261b33c37c
