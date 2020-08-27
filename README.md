@@ -7,11 +7,11 @@ As of (8/26/2020)
 
  2. Must be using Microstrategy 2020 V2. At the time of creating this github this is the lastest release. I would recommend using the latest  MicroStrategy Version and embedding sdk
  
- 3. Download SF CLI: https://developer.salesforce.com/tools/sfdxcli
-	 	 After installing run command `sfdx update` to confirm installation and upgrading to latest release
-      
+ 3. Download SF CLI: https://developer.salesforce.com/tools/sfdxcli 
+ - After installing run command `sfdx update` to confirm installation and upgrading to latest release
+
  4. Download VS Code editor: https://code.visualstudio.com/
-	 Install Salesforce extension pack. You can use the editor of your choice but VS code has many tools to make development easier with Salesforce and lightning web components
+ - Install Salesforce extension pack. You can use the editor of your choice but VS code has many tools to make development easier with Salesforce and lightning web components
 
 # Salesforce App
 
