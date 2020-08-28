@@ -14,8 +14,7 @@ As of (8/26/2020)
  - Install Salesforce extension pack. You can use the editor of your choice but VS code has many tools to make development easier with Salesforce and lightning web components
  5. Create a salesforce developer account: [https://developer.salesforce.com/](https://developer.salesforce.com/)
  6. Create a domain. Enter my domain in the search bar in the upper left corner.
- ![Alt text|large](images/myDomain.png?raw=true "myDomain")
- <img src="images/myDomain.png" width-"100" height="100">
+ ![Alt text|large](images/myDomain.png?raw=true =200x "myDomain")
 
 # Salesforce App
 
