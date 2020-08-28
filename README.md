@@ -15,6 +15,8 @@ As of (8/26/2020)
  5. Create a salesforce developer account: [https://developer.salesforce.com/](https://developer.salesforce.com/)
  6. Create a domain. Enter my domain in the search bar in the upper left corner.
  ![Alt text](images/myDomain.png=200x "myDomain")
+ <img src="myDomain.png" alt="myDomain" width="200"/>
+
 
 # Salesforce App
 
