@@ -15,6 +15,9 @@ As of (8/26/2020)
  5. Create a salesforce developer account: [https://developer.salesforce.com/](https://developer.salesforce.com/)
  6. Create a domain. Enter my domain in the search bar in the upper left corner.
  ![alt text](images/myDomain.png?raw=true "myDomain")
+ - Enter a domain name of your choice, check availability and if available register the domain. It will take some time to create the domain.
+ - Type Dev Hub into the search bar in the upper left corner. In this menu there is an option `Enable Dev Hub` with a toggle button that is currently disabled. Click the toggle and enable. FYI you can not change this option
+ - Once the domain is deployed go back to the My Domain setup page and login. There is a button to login on the setup page. After you login go back to the setup page and click the deploy to users button. This is a prerequesite to create aura or lightning web components.
 
 # Salesforce App
 
