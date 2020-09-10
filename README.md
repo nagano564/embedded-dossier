@@ -18,6 +18,18 @@ As of (8/26/2020)
  - Enter a domain name of your choice, check availability and if available register the domain. It will take some time to create the domain.
  - Type Dev Hub into the search bar in the upper left corner. In this menu there is an option `Enable Dev Hub` with a toggle button that is currently disabled. Click the toggle and enable. FYI you can not change this option
  - Once the domain is deployed go back to the My Domain setup page and login. There is a button to login on the setup page. After you login go back to the setup page and click the deploy to users button. This is a prerequesite to create aura or lightning web components.
+ 7. Next we will build an empty project and a scratch org. Building in LWC is similar to using github to build projects. You will write the code in your code editor and push the code to your scratch org. Once the code is pushed to your scratch org you can open your dev url and see the changes on your salesforce page. In this step we will create a blank project, link it to your developer org and create a scratch org
+ - Open your terminal and run this command `sfdx force:project:create -n "{Name of your project no brackets}"` This will create a blank sdfx project in the current directory. Open the project using VS Code
+ - In the terminal run this command `sfdx force:auth:web:login -a {alias of your choice no brackets} -d` This will open a web log in to your salesforce developer org. The `-a` parameter is to assign it an alias which can be anything. The `-d` parameter is to make this org your default org for this project. After running this command your default web browser will open. Login to the developer org account that you want to link to this project. Once you have logged in, grant access to the salesforce CLI and then you can close your browser. In your terminal you will see a message `Successfully authorized ...`
+ - If you are having issues login try a different browser. The new secruity browser updates are causing some login issues so if you are having this problem try a different browser. For more details click this link: https://community.microstrategy.com/s/article/Chrome-v80-Cookie-Behavior-and-the-impact-on-MicroStrategy-Deployments?language=en_US
+ - Go to the `projectName/config/project-scratch-def.json` file and add `"hasSampleData": true,` after `"features: [],`.
+ - Next run this command in the root folder of your project. `sfdx force:org:create -a {alias of your choice} -d 30 -f config/project-scratch-def.json -s` The `-d` parameter will determine the number to days to keep this scratch org. In this example this scratch org will be available for 30 days. That is the maximum number to days available at this time. The `-f` parameter will define the config file location for my scratch org creation. The `-s` is to set this as the default org.
+ - Run the `sfdx force:org:open` command to open the scratch org page
+ 8. You can't add script tags into the html file in the LWC framework. You will have to download the sdk locally on your computer and load it into the dev org portal.
+ - Go to salesforce developer homepage and type in `Static Resources` into the search bar in the upper left hand corner. Click on static resources and on the static resource set up page click new. The new button is centered under an blue bar. Give it a name, choose the sdk file on your local machine,change the cache control to public and click save.
+  ![alt text](images/staticResource.png?raw=true "staticResource")
+
+
 
 # Salesforce App
 
