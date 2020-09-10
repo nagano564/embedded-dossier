@@ -5,7 +5,7 @@ As of (8/26/2020)
 
  1. Set up firefox as your default browser. We will be opening the salesforce developer through the terminal. There is some issues logging into the dossier after it's embedded with chrome so we will be using firefox.
 
- 2. Must be using Microstrategy 2020 V2. At the time of creating this github this is the lastest release. I would recommend using the latest  MicroStrategy Version and embedding sdk
+ 2. Must use Microstrategy 2020 V2 sdk. At the time of creating this github this is the lastest release. I would recommend using the latest  MicroStrategy Version and embedding sdk
  
  3. Download SF CLI: https://developer.salesforce.com/tools/sfdxcli 
  - After installing run command `sfdx update` to confirm installation and upgrading to latest release
@@ -25,8 +25,8 @@ As of (8/26/2020)
  - Go to the `projectName/config/project-scratch-def.json` file and add `"hasSampleData": true,` after `"features: [],`.
  - Next run this command in the root folder of your project. `sfdx force:org:create -a {alias of your choice} -d 30 -f config/project-scratch-def.json -s` The `-d` parameter will determine the number to days to keep this scratch org. In this example this scratch org will be available for 30 days. That is the maximum number to days available at this time. The `-f` parameter will define the config file location for my scratch org creation. The `-s` is to set this as the default org.
  - Run the `sfdx force:org:open` command to open the scratch org page
- 8. You can't add script tags into the html file in the LWC framework. You will have to download the sdk locally on your computer and load it into the dev org portal.
- - Go to salesforce developer homepage and type in `Static Resources` into the search bar in the upper left hand corner. Click on static resources and on the static resource set up page click new. The new button is centered under an blue bar. Give it the name embeddinglib, choose the sdk file on your local machine, a copy has been saved at micro/embeddinglib.js in this github page. Change the cache control to public and click save. You can also find a copy at `/opt/apache/tomcat/apache-tomcat-9.0.30/webapps/MicroStrategyLibrary/javascript/embeddinglib.js` on your windows VM
+ 8. You can't add script tags into the html file in the LWC framework. You will have to download the sdk locally on your computer and load it into the dev org portal. Must use Microstrategy 2020 V2 sdk. At the time of creating this github this is the lastest release. I would recommend using the latest MicroStrategy Version and embedding sdk. A copy has been saved at micro/embeddinglib.js in this github page. You can also find a copy at `/opt/apache/tomcat/apache-tomcat-9.0.30/webapps/MicroStrategyLibrary/javascript/embeddinglib.js` on your windows VM using the WinSCP app.
+ - Go to salesforce developer homepage and type in `Static Resources` into the search bar in the upper left hand corner. Click on static resources and on the static resource set up page click new. The new button is centered under an blue bar. Give it the name embeddinglib, choose the sdk file on your local machine, change the cache control to public and click save.
   ![alt text](images/staticResource.png?raw=true "staticResource")
  9. Create a lightning web component
  - Run `sfdx force:lightning:component:create -n dossier -d force-app/main/default/lwc --type lwc`. In that directory a new folder dossier is created with three files are created. The three files are html, js and xml files. Copy paste the `dossier.js` file in this github account into the javascript file in the component folder that you created. Do the same with the `dossier.js-meta.xml` and `dossier.html` file. Replace the template files you created with the files in this github account. These lines of code below will allow you to load the sdk into this project. The rest is using the microstrategy sdk.
@@ -41,13 +41,11 @@ As of (8/26/2020)
 
  10. We will now push the code to your scratch org. Run the command `sfdx force:source:push` from your terminal. If successful your terminal will look like the image below
    ![alt text](images/terminal.png?raw=true "terminal")
- 11. Run command `sfdx force:org:open` which will open your dev hub url. Click on the 9 dots in the upper left hand corner. Go to sales app homepage. Click on the setup gear button in the upper right hand corner and click edit page. On the left hand column you should see Components. On top are the standard components and under them you should see custom. Click and drag dossier component onto your app page in the middle column of the setup page. Save and activate. On activation: Home page default click app default and assign to apps. Click sales, next and save. Back in the upper right corner
+ 11. Now we will setup our salesforce page as we have done in the past. 
+ - Run command `sfdx force:org:open` which will open your dev hub url. Click on the 9 dots in the upper left hand corner. Go to sales app homepage. Click on the setup gear button in the upper right hand corner and click edit page. On the left hand column you should see Components. On top are the standard components and under them you should see custom. Click and drag dossier component onto your app page in the middle column of the setup page. Save and activate. On activation: Home page default click app default and assign to apps. Click sales, next and save. Back in the upper right corner. Login to microstrategy and your dossier will be embedded on your salesforce page.
 
-
-
-
-
-
+ # Below this line are instructions for creating a standard salesforce app. This is not specific to embedding a microstrategy dossier.
+------------------------------------------------------------------------------------------------------------------------------------------
 # Salesforce App
 
 This guide helps Salesforce developers who are new to Visual Studio Code go from zero to a deployed app using Salesforce Extensions for VS Code and Salesforce CLI.
