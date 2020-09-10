@@ -26,8 +26,25 @@ As of (8/26/2020)
  - Next run this command in the root folder of your project. `sfdx force:org:create -a {alias of your choice} -d 30 -f config/project-scratch-def.json -s` The `-d` parameter will determine the number to days to keep this scratch org. In this example this scratch org will be available for 30 days. That is the maximum number to days available at this time. The `-f` parameter will define the config file location for my scratch org creation. The `-s` is to set this as the default org.
  - Run the `sfdx force:org:open` command to open the scratch org page
  8. You can't add script tags into the html file in the LWC framework. You will have to download the sdk locally on your computer and load it into the dev org portal.
- - Go to salesforce developer homepage and type in `Static Resources` into the search bar in the upper left hand corner. Click on static resources and on the static resource set up page click new. The new button is centered under an blue bar. Give it a name, choose the sdk file on your local machine,change the cache control to public and click save.
+ - Go to salesforce developer homepage and type in `Static Resources` into the search bar in the upper left hand corner. Click on static resources and on the static resource set up page click new. The new button is centered under an blue bar. Give it the name embeddinglib, choose the sdk file on your local machine, change the cache control to public and click save.
   ![alt text](images/staticResource.png?raw=true "staticResource")
+ 9. Create a lightning web component
+ - Run `sfdx force:lightning:component:create -n dossier -d force-app/main/default/lwc --type lwc`. In that directory a new folder dossier is created with three files are created. The three files are html, js and xml files. Copy paste the `dossier.js` file in this github account into the javascript file in the component folder that you created. Do the same with the `dossier.js-meta.xml` and `dossier.html` file. Replace the template files you created with the files in this github account. These lines of code below will allow you to load the sdk into this project. The rest is using the microstrategy sdk.
+ > import { loadScript } from 'lightning/platformResourceLoader';
+ > import embeddinglib from '@salesforce/resourceUrl/embeddinglib';
+ - This line below from the js file lets you access the `dossierContainer` div. Here is the salesforce documentation: https://developer.salesforce.com/docs/component-library/documentation/en/lwc/create_components_dom_work
+ > var placeholderDiv = this.template.querySelector("div.dossierContainer");
+ - This line of code in the html file will control the size of the component on the salesforce page.
+ > <div class="dossierContainer" style="height: 800px;"></div>
+ - These lines will determine what type of salesforce pages these components will be visible. This specific line states you will have access to this component on AppPage 
+ > <target>lightning__AppPage</target>
+
+ 10. We will now push the code to your scratch org. Run the command `sfdx force:source:push` from your terminal. If successful your terminal will look like the image below
+   ![alt text](images/terminal.png?raw=true "terminal")
+ 11. Run command `sfdx force:org:open` which will open your dev hub url. Click on the 9 dots in the upper left hand corner. Go to sales app homepage. Click on the setup gear button in the upper right hand corner and click edit page. On the left hand column you should see Components. On top are the standard components and under them you should see custom. Click and drag dossier component onto your app page in the middle column of the setup page. Save and activate. On activation: Home page default click app default and assign to apps. Click sales, next and save. Back in the upper right corner
+
+
+
 
 
 
